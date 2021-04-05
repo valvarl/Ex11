@@ -1,10 +1,11 @@
-// Copyright 2021
+// Copyright 2021 valvarl
 #include <iostream>
-#include <string>
 
 #include "train.h"
 
 int main() {
-  return 0;
+    Train train(10);
+    std::cout << train.calculate();
+    return 0;
 }
 
