@@ -1,12 +1,11 @@
 // Copyright 2021 valvarl
 
-#include <chrono>
 #include "train.h"
 
 Train::Train(int len) {
-     simple_rand.seed(
-     std::chrono::system_clock::now().time_since_epoch().count());
-    //simple_rand.seed(44);
+    // simple_rand.seed(
+    // std::chrono::system_clock::now().time_since_epoch().count());
+    simple_rand.seed(44);
 
     Cage *cage = new Cage((simple_rand() % 2 == 0 ? 1 : 0), getLast());
     setFirst(cage);
@@ -17,8 +16,8 @@ Train::Train(int len) {
         addTrain(new Cage((simple_rand() % 2 == 0 ? 1 : 0), getLast()));
     }
 
-    getLast()->next=getFirst();
-    getFirst()->prev=getLast();
+    getLast()->next = getFirst();
+    getFirst()->prev = getLast();
 }
 
 Cage *Train::getFirst() const {

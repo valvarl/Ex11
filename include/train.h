@@ -6,8 +6,7 @@
 #include <random>
 
 // класс "Вагон"
-class Cage
-{
+class Cage {
     bool light;  // Свет (вкл/выкл)
  public:
     Cage* next;  // следующий вагон
@@ -15,7 +14,7 @@ class Cage
     Cage(): light(false), next(nullptr), prev(nullptr) {}
     Cage(bool _light, Cage* _prev):
     light(_light), next(nullptr), prev(_prev) {}
-    void on()  { light=true;    }
+    void on()  { light = true; }
     void off() { light = false; }
     bool get() const  { return light;  }
 };
@@ -26,7 +25,7 @@ class Train {
     Cage* last;  // указатель на последний вагон
  public:
     std::minstd_rand simple_rand;
-    Train(int);
+    explicit Train(int);
     void addTrain(Cage* cage);
     Cage *getFirst() const;
     Cage *getLast() const;
